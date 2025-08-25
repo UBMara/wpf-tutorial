@@ -4,11 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_tutorial"
-        xmlns:views="clr-namespace:wpf_tutorial.Views"
+        xmlns:views="clr-namespace:wpf_tutorial.Views" 
+        xmlns:modalcontrol="clr-namespace:ModalControl;assembly=ModalControl" 
+        xmlns:viewmodels="clr-namespace:wpf_tutorial.ViewModels"
         mc:Ignorable="d"
         FontSize="14"
         Title="wpftutorial" Height="450" Width="800">
-    <Grid Margin="25">
-        <views:YBVView/>
-    </Grid>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:AddYTVViewModel}">
+            <views:AddYTVView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:EditYTVViewModel}">
+            <views:EditYTVView/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <modalcontrol:Modal Panel.ZIndex="1" IsOpen="{Binding IsModelOpen}">
+                <ContentControl Margin="50 25" Content="{Binding CurrentViewModel}"/>
+            </modalcontrol:Modal>
+
+            <views:YBVView DataContext="{Binding YTVViewModel}"
+                           MaxWidth="10000"
+                           Margin="25" />
+        </Grid>
+    </ScrollViewer>
 </Window>

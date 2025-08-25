@@ -12,14 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using wpf_tutorial.Stores;
-using wpf_tutorial.ViewModels;
 
 namespace wpf_tutorial.Components
 {
-    public partial class YTVListing : UserControl
+    /// <summary>
+    /// Interaction logic for YTVDetailsForm.xaml
+    /// </summary>
+    public partial class YTVDetailsForm : UserControl
     {
-        public YTVListing()
+        public YTVDetailsForm()
         {
             InitializeComponent();
         }

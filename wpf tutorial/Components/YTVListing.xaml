@@ -15,7 +15,11 @@
                 <Border x:Name="border"
                     Background="white"
                     CornerRadius="5"/>
-                <ListView BorderThickness="0" SelectedItem="{Binding SelectedYTVListingItemViewModel}" ItemsSource="{Binding YTVListingModelsView}">
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          SelectionMode="Single"
+                          BorderThickness="0" 
+                          SelectedItem="{Binding SelectedYTVListingItemViewModel}" 
+                          ItemsSource="{Binding YTVListingModelsView}">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -23,73 +27,7 @@
                     </ListView.ItemContainerStyle>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Border Padding="10" TextBlock.FontSize="16">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <TextBlock Grid.Column="0" Text="{Binding UserName}"/>
-
-                                    <custom:DropdownMenu Grid.Column="1"  Margin="10, 0, 0, 0">
-                                        <Border Background="White" 
-                                                BorderBrush="Gray" 
-                                                BorderThickness="1">
-
-                                            <StackPanel MinWidth="125">
-                                                <StackPanel.Resources>
-                                                    <Style TargetType="Button">
-                                                        <Setter Property="Background" Value="#f0f0f0"/>
-                                                        <Setter Property="Foreground" Value="Black"/>
-                                                        <Setter Property="Padding" Value="15, 5"/>
-                                                        <Setter Property="Cursor" Value="Hand"/>
-
-                                                        <Setter Property="Template">
-                                                            <Setter.Value>
-                                                                <ControlTemplate TargetType="Button">
-                                                                    <Border Background="{TemplateBinding Background}" 
-                                                                            Margin="{TemplateBinding Margin}"
-                                                                            Padding="{TemplateBinding Padding}">
-                                                                        <ContentPresenter/>
-                                                                    </Border>
-                                                                </ControlTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-
-                                                        <Style.Triggers>
-                                                            <Trigger Property="IsMouseOver" Value="True">
-                                                                <Trigger.EnterActions>
-                                                                    <BeginStoryboard>
-                                                                        <Storyboard>
-                                                                            <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" 
-                                                                                            To="#c7c7c7" 
-                                                                                            Duration="0:0:0.1"/>
-                                                                        </Storyboard>
-                                                                    </BeginStoryboard>
-                                                                </Trigger.EnterActions>
-
-                                                                <Trigger.ExitActions>
-                                                                    <BeginStoryboard>
-                                                                        <Storyboard>
-                                                                            <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" 
-                                                                                            To="#f0f0f0" 
-                                                                                            Duration="0:0:0.5"/>
-                                                                        </Storyboard>
-                                                                    </BeginStoryboard>
-                                                                </Trigger.ExitActions>
-                                                            </Trigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </StackPanel.Resources>
-
-                                                <Button Content="Edite" Command="{Binding EditComand}"/>
-                                                <Button Content="Delete" Command="{Binding DeleteComand}"/>
-                                            </StackPanel>
-                                        </Border>
-                                    </custom:DropdownMenu>
-                                </Grid>
-                            </Border>
+                            <local:YTVListingItem/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

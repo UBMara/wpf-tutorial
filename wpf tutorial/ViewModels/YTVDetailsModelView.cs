@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using wpf_tutorial.Models;
+using wpftutorial.Domain.Models;
 using wpf_tutorial.Stores;
 
 namespace wpf_tutorial.ViewModels
 {
-    internal class YTVDetailsModelView : ViewModelBase
+    public class YTVDetailsModelView : ViewModelBase
     {
         private readonly SelectedYTVStore _selectedYTViewerStore;
 

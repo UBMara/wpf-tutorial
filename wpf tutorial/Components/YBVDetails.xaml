@@ -24,7 +24,7 @@
                             </Style.Triggers>
                         </Style>
                     </Grid.Style>
-                    <TextBlock Grid.Row="0" Text="Please select a view"/>
+                    <TextBlock Grid.Row="0" Text="Please select a viewer"/>
                 </Grid>
 
                 <Grid Grid.IsSharedSizeScope="True">
@@ -46,6 +46,7 @@
 
                     <TextBlock Grid.Row="0"
                            Text="{Binding UserName}"
+                           TextWrapping="Wrap"
                            FontSize="24"/>
 
                     <Grid Grid.Row="1" Margin="0, 20, 0, 0">

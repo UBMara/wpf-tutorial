@@ -11,6 +11,20 @@
 
   <ItemGroup>
     <PackageReference Include="DropdownMenu.WPF" Version="1.0.0" />
+    <PackageReference Include="LoadingSpinner.WPF" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+    <PackageReference Include="SimpleModal.WPF" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wpftutorial.Domain\wpftutorial.Domain.csproj" />
+    <ProjectReference Include="..\wpftutorialFramework\wpftutorialFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

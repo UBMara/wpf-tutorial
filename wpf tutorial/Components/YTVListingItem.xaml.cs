@@ -12,16 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using wpf_tutorial.Stores;
-using wpf_tutorial.ViewModels;
 
 namespace wpf_tutorial.Components
 {
-    public partial class YTVListing : UserControl
+    public partial class YTVListingItem : UserControl
     {
-        public YTVListing()
+        public YTVListingItem()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            dropdown.IsOpen = false;
         }
     }
 }
